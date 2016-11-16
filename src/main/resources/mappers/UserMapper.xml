@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user.userMapper">
+    
+    <insert id="addUser" parameterType="map">
+        insert into t_user(user_name,pass_word,gander)
+         values(#{userName},#{passWord},#{gander});
+        
+    </insert>
+    
+
+    <!--&lt;!&ndash;添加文章&ndash;&gt;
+    <insert id="insertArticle" useGeneratedKeys="true" keyProperty="id" parameterType="Article">
+        INSERT INTO lk_article
+        (TITLE,AUTHOR_ID,CREATE_USER_ID,BIREF,IMAGE,IS_ORIGINAL,FORIGINAL_LINK,
+        PUBLISH_LOCATION,ORIGINAL_NAME,STATE,CONTENT,CONTENT_GOOD,IS_AUTHORIZED,ORIGINAL_TYPE,CREATE_DATE,LAST_UPDATE_DATE)
+        VALUES
+        (#{title},#{author_id},#{create_user_id}, #{biref},#{image}, #{is_original},#{foriginal_link},
+        #{publish_location},#{original_name},#{state},'',#{content_good},#{is_authorized},#{original_type},now(),now())
+    </insert>
+
+    &lt;!&ndash;修改文章状态&ndash;&gt;
+    <update id="updateArticleStatues" parameterType="Article">
+        update lk_article
+        <set>
+            <if test="is_original != null and is_original !='' ">IS_ORIGINAL=#{is_original},</if>
+            <if test="original_type != null and original_type !='' ">original_type=#{original_type},</if>
+            <if test="publish_location != null and publish_location !='' ">PUBLISH_LOCATION=#{publish_location},</if>
+            <if test="state != null and state !='' ">state=#{state},</if>
+            <if test="is_deleted != null and is_deleted !='' ">IS_DELETED=#{is_deleted},</if>
+            <if test="is_no_comment != null and is_no_comment !='' ">IS_NO_COMMENT=#{is_no_comment},</if>
+            <if test="is_recommend != null and is_recommend !='' ">IS_RECOMMEND=#{is_recommend},</if>
+            <if test="is_authorized != null and is_authorized !='' ">is_authorized=#{is_authorized},</if>
+            <if test="is_deleted==1">IS_DELETED=#{is_deleted},</if>
+            <if test="state==3">PULISH_DATE=now(),</if>
+            <if test="state==5">LAST_UPDATE_DATE=now(),</if>
+            <if test="state==3">order_sort=unix_timestamp(current_timestamp(3))*1000,</if>
+            <if test="is_recommend ==2">recommend_time=now(),</if>
+
+        </set>
+        where ID=#{id}
+    </update>
+    
+    
+    <select id="getUserPersonaleArticleIdsNum" resultType="long">
+        select count(1) num  from lk_article
+        where CREATE_USER_ID =#{userId} and state !='5' and IS_DELETED=0
+        <choose>
+            <when test="type==0">
+                and IS_ORIGINAL=0
+            </when>
+            <otherwise>
+                and IS_ORIGINAL != 0
+            </otherwise>
+        </choose>
+    </select>-->
+
+    
+</mapper>

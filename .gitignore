@@ -1,0 +1,8 @@
+.idea/
+*.iml
+target/
+*.log
+logPath_IS_UNDEFINED/
+class/
+classes/
+
