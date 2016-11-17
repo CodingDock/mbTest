@@ -18,9 +18,9 @@ public class InitContext {
     public static ApplicationContext ctx=null;
     
     static {
-        ctx=new  ClassPathXmlApplicationContext("applicationContext.xml");
+//        ctx=new  ClassPathXmlApplicationContext("applicationContext.xml");
 //        ctx=new FileSystemXmlApplicationContext("D:\\src\\mbTest\\src\\main\\resources\\spring\\applicationContext.xml");
-        
+        ctx=new ClassPathXmlApplicationContext("classpath:/spring/applicationContext.xml");
         
     }
 
