@@ -25,11 +25,11 @@ public class Task {
         System.out.println("masterSqlSessionFactory---"+o.getClass().getName());
         final SqlSessionTemplate sfb=InitContext.ctx.getBean("masterSqlSessionTemplate",SqlSessionTemplate.class);
         System.out.println("masterSqlSessionTemplate---"+sfb);
-        int i=10000;
+        int i=100;
         while(i>0){
             final int j=--i;
             final int t=new Random().nextInt(9);
-            if(t<7){
+            if(t<10){
                 new Thread(new Runnable() {
                     @Override
                     public void run() {

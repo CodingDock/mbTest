@@ -11,6 +11,11 @@
         
     </insert>
     
+    <select id="getFirstrecord" resultType="User">
+        select * from t_user where create_time &lt; #{times}
+        order by create_time limit 1
+    </select>
+    
 
     <!--&lt;!&ndash;添加文章&ndash;&gt;
     <insert id="insertArticle" useGeneratedKeys="true" keyProperty="id" parameterType="Article">
