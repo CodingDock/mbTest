@@ -34,7 +34,7 @@ public class WorkIdHandle {
     
     
     
-    @Transactional(isolation= Isolation.REPEATABLE_READ)//isolation= Isolation.REPEATABLE_READ
+    @Transactional(isolation= Isolation.SERIALIZABLE)//isolation= Isolation.REPEATABLE_READ
     public int getWorkId1() throws InterruptedException {
 
         String times=getBeforeHeartBeat();
@@ -46,16 +46,16 @@ public class WorkIdHandle {
         System.out.println("i---"+i);
 //        if(i!=1)
 //            throw new RuntimeException("ddddd");
-        int n=10;
+        int n=20;
         while(n!=0){
             Thread.sleep(1500);
-            System.out.println("sleeping...");
+            System.out.print("sleeping\t");
             n--;
         }
         return 0;
     }
 
-    @Transactional(isolation= Isolation.REPEATABLE_READ)//isolation= Isolation.REPEATABLE_READ
+    @Transactional(isolation= Isolation.SERIALIZABLE)//isolation= Isolation.REPEATABLE_READ
     public int getWorkId2(){
 
         String times=getBeforeHeartBeat();
