@@ -1,6 +1,7 @@
 package com.test.user.bean;
 
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import test.InitContext;
 
@@ -13,10 +14,15 @@ import java.util.Map;
 @Component
 public class Dao {
 
+    @Autowired
+    SqlSessionTemplate sfb;
 
+    public void hello(){
+        System.out.println("hello");
+    }
 
     public  int addUser(String userName,String passWord){
-        SqlSessionTemplate sfb=InitContext.ctx.getBean("masterSqlSessionTemplate",SqlSessionTemplate.class);
+//        SqlSessionTemplate sfb=InitContext.ctx.getBean("masterSqlSessionTemplate",SqlSessionTemplate.class);
         Map u=new HashMap();
         u.put("userName",userName);
         u.put("passWord",passWord);

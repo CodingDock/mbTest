@@ -10,7 +10,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>3.2.3.RELEASE</spring.version>
+    <spring.version>4.2.5.RELEASE</spring.version>
   </properties>
   
   
@@ -172,7 +172,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.10</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -203,8 +203,8 @@
         <version>3.3</version>
         <configuration>
           <!--由于spring3.2.3不支持jdk8，所以maven编译级别实际为1.7-->
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
     </plugins>
