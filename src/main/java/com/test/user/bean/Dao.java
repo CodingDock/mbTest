@@ -14,8 +14,8 @@ import java.util.Map;
 @Component
 public class Dao {
 
-    @Autowired
-    SqlSessionTemplate sfb;
+//    @Autowired
+//    SqlSessionTemplate sfb;
 
     public void hello(){
         System.out.println("hello");
@@ -27,7 +27,8 @@ public class Dao {
         u.put("userName",userName);
         u.put("passWord",passWord);
         u.put("gander",1);
-        return sfb.insert("user.userMapper.addUser",u);
+//        return sfb.insert("user.userMapper.addUser",u);
+        return 1;
     }
 
 }
