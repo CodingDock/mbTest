@@ -65,11 +65,6 @@
 		<property name="typeAliasesPackage" value="com.test.user.bean" />
 	</bean>
 
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.pndao.test.UserDao" />
-		<property name="typeAliasesPackage" value="
-			com.mb2.bean" />
-	</bean>
 
 	<bean id="masterSqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="masterSqlSessionFactory" />
