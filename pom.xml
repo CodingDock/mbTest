@@ -10,7 +10,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>3.2.3.RELEASE</spring.version>
+    <spring.version>4.1.7.RELEASE</spring.version>
   </properties>
   
   
@@ -192,7 +192,19 @@
       <artifactId>servlet-api</artifactId>
       <version>6.0.13</version>
     </dependency>
-    
+
+    <dependency>
+      <groupId>org.dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
   
   <build>
@@ -203,8 +215,8 @@
         <version>3.3</version>
         <configuration>
           <!--由于spring3.2.3不支持jdk8，所以maven编译级别实际为1.7-->
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
     </plugins>

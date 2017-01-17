@@ -61,11 +61,12 @@
 		<!-- 实例化sqlSessionFactory时需要使用上述配置好的数据源以及SQL映射文件 -->
 		<property name="dataSource" ref="masterDataSource" />
 		<property name="mapperLocations" value="classpath*:/mappers/*Mapper.xml" />
-		<property name="typeAliasesPackage" value="
-			com.test.user.bean" />
+		<property name="typeAliasesPackage" value="com.test.user.bean" />
 	</bean>
 
-
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.pndao.test.UserDao" />
+	</bean>
 
 	<bean id="masterSqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="masterSqlSessionFactory" />
