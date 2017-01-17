@@ -20,8 +20,8 @@ import java.util.Date;
 public class WorkIdHandle {
     
 
-    @Autowired
-    public SqlSessionTemplate masterSqlSessionTemplate;
+//    @Autowired
+//    public SqlSessionTemplate masterSqlSessionTemplate;
 
 
 //    private static WorkIdHandle workIdHandle =new WorkIdHandle();
@@ -37,13 +37,13 @@ public class WorkIdHandle {
     @Transactional(isolation= Isolation.SERIALIZABLE)//isolation= Isolation.REPEATABLE_READ
     public int getWorkId1() throws InterruptedException {
 
-        String times=getBeforeHeartBeat();
-
-        User u=masterSqlSessionTemplate.selectOne("user.userMapper.getFirstrecord",times);
-        System.out.println(u);
-        
-        int i =masterSqlSessionTemplate.update("user.userMapper.updateUserCreateTime",u);
-        System.out.println("i---"+i);
+//        String times=getBeforeHeartBeat();
+//
+//        User u=masterSqlSessionTemplate.selectOne("user.userMapper.getFirstrecord",times);
+//        System.out.println(u);
+//        
+//        int i =masterSqlSessionTemplate.update("user.userMapper.updateUserCreateTime",u);
+//        System.out.println("i---"+i);
 //        if(i!=1)
 //            throw new RuntimeException("ddddd");
         int n=20;
@@ -60,11 +60,11 @@ public class WorkIdHandle {
 
         String times=getBeforeHeartBeat();
 
-        User u=masterSqlSessionTemplate.selectOne("user.userMapper.getFirstrecord",times);
-        System.out.println(u);
-
-        int i =masterSqlSessionTemplate.update("user.userMapper.updateUserCreateTime",u);
-        System.out.println("i---"+i);
+//        User u=masterSqlSessionTemplate.selectOne("user.userMapper.getFirstrecord",times);
+//        System.out.println(u);
+//
+//        int i =masterSqlSessionTemplate.update("user.userMapper.updateUserCreateTime",u);
+//        System.out.println("i---"+i);
 //        if(i!=1)
 //            throw new RuntimeException("ddddd");
 
