@@ -1,6 +1,5 @@
 package com.xmm.genarate;
 
-import com.sun.jdi.DoubleType;
 import com.test.user.bean.User;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

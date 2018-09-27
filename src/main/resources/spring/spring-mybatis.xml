@@ -48,7 +48,7 @@
 
 		<property name="connectionProperties" value="druid.stat.slowSqlMillis=2000" />
 		<!-- 配置防御sql注入-->
-		<property name="filters" value="stat,wall" />
+		<property name="filters" value="stat,wall,slf4j" />
 	</bean>
 
 
